@@ -2,6 +2,7 @@ import serial
 from serial.tools import list_ports
 import tkinter as tk
 import os
+import pandas
 import threading
 
 root = tk.Tk()
