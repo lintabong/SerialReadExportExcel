@@ -1,4 +1,4 @@
-myList = [21.22,19.01,18.19]
+myAlpha = "lintan 123"
 
-print(myList[0])
-print(type(myList), len(myList))
+print(any(c.isalpha() for c in myAlpha))
+

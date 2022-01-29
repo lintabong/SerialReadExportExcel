@@ -50,9 +50,16 @@ def readSerial():
     global enu
     myVal = ser.readline()
     enu = 1 + enu
-    print(enu, myVal)
+    myVal = str(myVal)
+    myVal = myVal.replace('\\r\\n', "")
+    myVal = myVal.replace('b', "")
+    myVal = myVal.replace('\'', "")
+    myValnew = myVal.split(',')
+    print(myValnew)
+
+    # print(enu, myValnew, len((myValnew)))
     Tvalu.config(text=myVal)
-    root.after(100, threading.Thread(target=readSerial).start)
+    root.after(500, threading.Thread(target=readSerial).start)
 
 
 F1 = tk.Frame(root, height=h, width=w, bg='#5C6592')
